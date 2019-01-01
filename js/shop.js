@@ -15,34 +15,30 @@ window.onload=function () {
         el:wrap,
         offBar:false
     });
-    refresh.addEventListener('touchend',function () {
+    refresh.addEventListener('click',function () {
         document.location.reload();
     });
     
-    oUl.addEventListener('touchmove',function () {
-        isTab=false;
-    });
+    // oUl.addEventListener('touchmove',function () {
+    //     isTab=false;
+    // });
     for (var i=0;i<aLi.length;i++){
         aLi[i].index=i;
-        aLi[i].addEventListener('touchstart',function () {
+        aLi[i].addEventListener('click',function () {
             bigImg.src=arrSrc[this.index%3];
         })
     }
-    oUl.addEventListener('touchend',function () {
-        if (isTab) {
-
-            imgPage.style.display='block';
-            MTween({
-                el:imgPage,
-                time:200,
-                target:{scale:100},
-                type:"easeOut"
-            })
-        }
-        isTab = true;
+    oUl.addEventListener('click',function () {
+        imgPage.style.display='block';
+        MTween({
+            el:imgPage,
+            time:200,
+            target:{scale:100},
+            type:"easeOut"
+        })
     });
 
-    backBtn.addEventListener('touchend',function () {
+    backBtn.addEventListener('click',function () {
         MTween({
             el:imgPage,
             time:200,
@@ -55,7 +51,7 @@ window.onload=function () {
         })
 
     });
-    task.addEventListener('touchend',function () {
+    task.addEventListener('click',function () {
        MTween({
            el:sideBar,
            target:{translateX:0},
@@ -72,7 +68,7 @@ window.onload=function () {
            }
        })
     })
-    mask.addEventListener('touchend',function () {
+    mask.addEventListener('click',function () {
         MTween({
             el:sideBar,
             target:{translateX:-1000},
