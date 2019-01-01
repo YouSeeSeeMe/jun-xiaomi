@@ -25,6 +25,7 @@ window.onload=function () {
     for (var i=0;i<aLi.length;i++){
         aLi[i].index=i;
         aLi[i].addEventListener('touchstart',function () {
+            event.preventDefault();
             bigImg.src=arrSrc[this.index%3];
         })
     }
@@ -120,6 +121,7 @@ function myScroll(init) {
     }
     css(inner,'translateZ',0.01);//3D硬件加速
     inner.addEventListener('touchstart',function (e) {
+        event.preventDefault();
         maxTranslate=wrap.clientHeight-inner.offsetHeight;
         if (!init.offBar) {
             if (maxTranslate >= 0) {
