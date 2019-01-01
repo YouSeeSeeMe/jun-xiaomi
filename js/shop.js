@@ -15,7 +15,7 @@ window.onload=function () {
         el:wrap,
         offBar:false
     });
-    refresh.addEventListener('click',function () {
+    refresh.addEventListener('touchend',function () {
         document.location.reload();
     });
     
@@ -24,21 +24,26 @@ window.onload=function () {
     // });
     for (var i=0;i<aLi.length;i++){
         aLi[i].index=i;
-        aLi[i].addEventListener('click',function () {
+        aLi[i].addEventListener('touchstart',function () {
             bigImg.src=arrSrc[this.index%3];
         })
     }
-    oUl.addEventListener('click',function () {
+    oUl.addEventListener('touchend',function () {
+        // if (isTab) {
+
+            
+        // }
+        // isTab = true;
         imgPage.style.display='block';
-        MTween({
-            el:imgPage,
-            time:200,
-            target:{scale:100},
-            type:"easeOut"
-        })
+            MTween({
+                el:imgPage,
+                time:200,
+                target:{scale:100},
+                type:"easeOut"
+            })
     });
 
-    backBtn.addEventListener('click',function () {
+    backBtn.addEventListener('touchend',function () {
         MTween({
             el:imgPage,
             time:200,
@@ -51,7 +56,7 @@ window.onload=function () {
         })
 
     });
-    task.addEventListener('click',function () {
+    task.addEventListener('touchend',function () {
        MTween({
            el:sideBar,
            target:{translateX:0},
@@ -68,7 +73,7 @@ window.onload=function () {
            }
        })
     })
-    mask.addEventListener('click',function () {
+    mask.addEventListener('touchend',function () {
         MTween({
             el:sideBar,
             target:{translateX:-1000},
