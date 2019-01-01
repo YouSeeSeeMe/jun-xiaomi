@@ -27,6 +27,13 @@ window.onload=function () {
         aLi[i].addEventListener('touchstart',function () {
             bigImg.src=arrSrc[this.index%3];
         })
+        imgPage.style.display='block';
+        MTween({
+            el:imgPage,
+            time:200,
+            target:{scale:100},
+            type:"easeOut"
+        })
     }
     oUl.addEventListener('touchend',function () {
         // if (isTab) {
@@ -34,13 +41,7 @@ window.onload=function () {
             
         // }
         // isTab = true;
-        imgPage.style.display='block';
-            MTween({
-                el:imgPage,
-                time:200,
-                target:{scale:100},
-                type:"easeOut"
-            })
+
     });
 
     backBtn.addEventListener('touchend',function () {
