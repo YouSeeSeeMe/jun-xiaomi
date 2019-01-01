@@ -108,7 +108,6 @@ function setGesTure(init) {
         return;
     }
     el.addEventListener('touchstart',function (e) {
-        event.preventDefault();
         if (e.touches.length>=2){
             isGesTure=true;//记录用户当前触发了gesture
             startPoint[0]={x:e.touches[0].pageX, y:e.touches[0].pageY};//获取第一根手指坐标
